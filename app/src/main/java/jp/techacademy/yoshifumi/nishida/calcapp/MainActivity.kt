@@ -8,6 +8,7 @@ import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         var button2: Button = findViewById(R.id.button2)
         var button3: Button = findViewById(R.id.button3)
         var button4: Button = findViewById(R.id.button4)
-        var advise: TextView = findViewById(R.id.advise)
+
 
         //ページ遷移
         val intent = Intent(this, MainActivity2::class.java)
@@ -31,20 +32,20 @@ class MainActivity : AppCompatActivity() {
             //四則計算をしたデータを送る
             button1.setOnClickListener {
 
-                intent.putExtra(
-                    "VALUE",
-                    et1.text.toString().toFloat() + et2.text.toString().toFloat()
-                )
-                if (et1.text.isEmpty()) {
+                if (et1.text.toString()==("")) {
 
-                    advise.text = "数字を入力してください"
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
-                } else if (et2.text.isEmpty()) {
 
-                    advise.text = "数字を入力してください"
+                } else if (et2.text.toString()==("")) {
+
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
                 }else {
-
+                    intent.putExtra(
+                        "VALUE",
+                        et1.text.toString().toFloat() + et2.text.toString().toFloat()
+                    )
                     startActivity(intent)
                 }
 
@@ -52,20 +53,22 @@ class MainActivity : AppCompatActivity() {
 
             button2.setOnClickListener {
 
-                intent.putExtra(
-                    "VALUE",
-                    et1.text.toString().toFloat() - et2.text.toString().toFloat()
-                )
-                if (et1.text.isEmpty()) {
 
-                    advise.text = "数字を入力してください"
+                if (et1.text.toString()==("")) {
 
-                } else if (et2.text.isEmpty()) {
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
-                    advise.text = "数字を入力してください"
+
+                } else if (et2.text.toString()==("")) {
+
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
                 }else {
 
+                    intent.putExtra(
+                        "VALUE",
+                        et1.text.toString().toFloat() - et2.text.toString().toFloat()
+                    )
                     startActivity(intent)
                 }
 
@@ -73,40 +76,44 @@ class MainActivity : AppCompatActivity() {
 
             button3.setOnClickListener {
 
-                intent.putExtra(
-                    "VALUE",
-                    et1.text.toString().toFloat() * et2.text.toString().toFloat()
-                )
-                if (et1.text.isEmpty()) {
 
-                    advise.text = "数字を入力してください"
+                if (et1.text.toString()==("")) {
 
-                } else if (et2.text.isEmpty()) {
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
-                    advise.text = "数字を入力してください"
+
+                } else if (et2.text.toString()==("")) {
+
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
                 }else {
+                    intent.putExtra(
+                        "VALUE",
+                        et1.text.toString().toFloat() * et2.text.toString().toFloat()
+                    )
 
                     startActivity(intent)
                 }
 
-
             }
             button4.setOnClickListener {
 
-                intent.putExtra(
-                    "VALUE",
-                    et1.text.toString().toFloat() / et2.text.toString().toFloat()
-                )
-                if (et1.text.isEmpty()) {
 
-                    advise.text = "数字を入力してください"
+                if (et1.text.toString()==("")) {
 
-                } else if (et2.text.isEmpty()) {
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
-                    advise.text = "数字を入力してください"
+
+                } else if (et2.text.toString()==("")) {
+
+                    Toast.makeText(this,"数字を入力してください",Toast.LENGTH_LONG).show()
 
                 }else {
+
+                    intent.putExtra(
+                        "VALUE",
+                        et1.text.toString().toFloat() / et2.text.toString().toFloat()
+                    )
 
                     startActivity(intent)
                 }
