@@ -14,7 +14,7 @@ class MainActivity2 : AppCompatActivity() {
 
         //idを取得
         var ans :TextView = findViewById(R.id.ans)
-        var back :Button = findViewById(R.id.back)
+
 
 
             val value = intent.getFloatExtra("VALUE",0f)
