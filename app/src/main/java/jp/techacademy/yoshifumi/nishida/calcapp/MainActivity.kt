@@ -27,11 +27,11 @@ class MainActivity : AppCompatActivity() {
         //ページ遷移
         val intent = Intent(this, MainActivity2::class.java)
 
-        if (et1.isEmpty()) {
+        if (et1.text.isEmpty()) {
 
             advise.text = "数字を入力してください"
 
-        } else if (et2.isEmpty()) {
+        } else if (et2.text.isEmpty()) {
 
             advise.text = "数字を入力してください"
 
