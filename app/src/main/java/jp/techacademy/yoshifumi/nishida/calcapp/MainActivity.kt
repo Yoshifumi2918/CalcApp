@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-        button3.setOnClickListener {
+        button4.setOnClickListener {
 
             intent.putExtra("VALUE7",et1.text.toString().toFloat())
 
