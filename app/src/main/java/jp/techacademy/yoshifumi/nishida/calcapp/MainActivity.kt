@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,48 +22,63 @@ class MainActivity : AppCompatActivity() {
         var button2: Button = findViewById(R.id.button2)
         var button3: Button = findViewById(R.id.button3)
         var button4: Button = findViewById(R.id.button4)
+        var advise: TextView = findViewById(R.id.advise)
 
         //ページ遷移
         val intent = Intent(this, MainActivity2::class.java)
 
+        if (et1.isEmpty()) {
 
-        //四則計算をする（ここがもっとスッキリする書き方があるはず・・・）
-        button1.setOnClickListener {
+            advise.text = "数字を入力してください"
 
-            intent.putExtra("VALUE1",et1.text.toString().toFloat())
+        } else if (et2.isEmpty()) {
 
-            intent.putExtra("VALUE2",et2.text.toString().toFloat())
+            advise.text = "数字を入力してください"
 
-            startActivity(intent)
+        } else {
+
+            //四則計算をしたデータを送る
+            button1.setOnClickListener {
+
+                intent.putExtra(
+                    "VALUE",
+                    et1.text.toString().toFloat() + et2.text.toString().toFloat()
+                )
+
+                startActivity(intent)
+
+            }
+
+            button2.setOnClickListener {
+
+                intent.putExtra(
+                    "VALUE",
+                    et1.text.toString().toFloat() - et2.text.toString().toFloat()
+                )
+
+                startActivity(intent)
+            }
+
+            button3.setOnClickListener {
+
+                intent.putExtra(
+                    "VALUE",
+                    et1.text.toString().toFloat() * et2.text.toString().toFloat()
+                )
+
+                startActivity(intent)
+
+            }
+            button4.setOnClickListener {
+
+                intent.putExtra(
+                    "VALUE",
+                    et1.text.toString().toFloat() / et2.text.toString().toFloat()
+                )
+
+                startActivity(intent)
+            }
 
         }
-
-        button2.setOnClickListener {
-
-            intent.putExtra("VALUE3",et1.text.toString().toFloat())
-
-            intent.putExtra("VALUE4",et2.text.toString().toFloat())
-
-            startActivity(intent)
-        }
-
-        button3.setOnClickListener {
-
-            intent.putExtra("VALUE5",et1.text.toString().toFloat())
-
-            intent.putExtra("VALUE6",et2.text.toString().toFloat())
-
-            startActivity(intent)
-
-        }
-        button4.setOnClickListener {
-
-            intent.putExtra("VALUE7",et1.text.toString().toFloat())
-
-            intent.putExtra("VALUE8",et2.text.toString().toFloat())
-
-            startActivity(intent)
-        }
-
     }
 }
