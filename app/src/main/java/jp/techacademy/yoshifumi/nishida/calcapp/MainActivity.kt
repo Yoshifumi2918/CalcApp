@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity2::class.java)
 
 
-        //四則計算をする
+        //四則計算をする（ここがもっとスッキリする書き方があるはず・・・）
         button1.setOnClickListener {
 
             intent.putExtra("VALUE1",et1.text.toString().toFloat())

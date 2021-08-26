@@ -16,6 +16,8 @@ class MainActivity2 : AppCompatActivity() {
         var ans :TextView = findViewById(R.id.ans)
         var back :Button = findViewById(R.id.back)
 
+        //割り算の処理になるのは、最後のコードが反映されているから？　改善のために条件分岐の処理　→　書き方がわからないからヒントが欲しい
+
             val value1 = intent.getFloatExtra("VALUE1", 0f)
             val value2 = intent.getFloatExtra("VALUE2", 0f)
             val value3 = intent.getFloatExtra("VALUE3", 0f)
